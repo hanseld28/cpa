@@ -3,7 +3,6 @@
 
 
 <?php $__env->startSection('view-content'); ?>
-Painel da Comissão
 <?php $__env->stopSection(); ?>
 
 

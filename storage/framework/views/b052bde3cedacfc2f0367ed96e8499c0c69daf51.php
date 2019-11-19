@@ -1,29 +1,33 @@
+<div id="user-perfil">
+    <img>
+    <label for="username">Nome do Usuário</label>
+</div>
 <nav id='lateral-menu'>
     <ul>
         <li>
             <a href="">
-                <i class="far fa-sticky-note">
+                <i class="fa fa-sticky-note-o fa-4" aria-hidden="true">
                     <h3>Atividades</h3>
                 </i>
             </a>
         </li>
         <li>
             <a href="">
-                <i class="">
+                <i class="fa fa-list-alt" aria-hidden="true">
                     <h3>Formulários</h3>
                 </i>
             </a>
         </li>
         <li>
             <a href="">
-                <i class="">
+                <i class="fa fa-file-text-o" aria-hidden="true">
                     <h3>Relatórios</h3>
                 </i>
             </a>
         </li>
         <li>
             <a href="">
-                <i class="">
+                <i class="fa fa-line-chart" aria-hidden="true">
                     <h3>Estatísticas</h3>
                 </i>
             </a>

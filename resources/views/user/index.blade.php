@@ -7,6 +7,7 @@
 
 
 @section('view-content')
+    
 @endsection
 
 
