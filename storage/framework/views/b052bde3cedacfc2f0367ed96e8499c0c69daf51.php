@@ -2,7 +2,7 @@
     <ul>
         <li>
             <a href="">
-                <i class="fa fa-sticky-note-o fa-4" aria-hidden="true">
+                <i class="far fa-sticky-note">
                     <h3>Atividades</h3>
                 </i>
             </a>
@@ -30,4 +30,4 @@
         </li>
     </ul>
 
-</nav>
+</nav><?php /**PATH C:\Users\user\Documents\@Projetos\cpa\resources\views/templates/lateral-menu.blade.php ENDPATH**/ ?>
