@@ -2,12 +2,12 @@
     <div id="title-option-menu">
         <label for="text-option-menu">
             <i class="fa fa-list-alt" aria-hidden="true"></i>
-            Formulários
+            {{ $value ?? 'Formulário' }}
         </label>
     </div>
     <div id="search-bar">
         <label for="">
-            Pesquisar...
+            -----------
         </label>     
     </div>
 </div>

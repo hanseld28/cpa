@@ -12,16 +12,21 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="<?php echo e(asset('css/stylesheet.css')); ?>">
+        <script src="<?php echo e(asset('js/app.js')); ?>"></script>
     </head>
     <body>
-        <?php echo $__env->make('templates.top-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
-        <?php echo $__env->make('templates.lateral-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
-        <?php echo $__env->make('templates.sub-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
-        <?php echo $__env->make('templates.center-content', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+        <?php echo $__env->make('templates.top-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('templates.lateral-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         
+        <?php echo $__env->yieldContent('view-sub-header'); ?>
 
-        <?php echo $__env->yieldContent('view-content'); ?>
-        
+        <div id="container">
+            <div id="content"> 
+
+                <?php echo $__env->yieldContent('view-content'); ?>
+            
+            </div>
+        </div> 
 
         <?php echo $__env->yieldContent('view-js'); ?>
     </body>

@@ -6,7 +6,12 @@
 @endsection
 
 
+@section('view-sub-header')
+    @include('templates.sub-header')
+@endsection
+
 @section('view-content')
+    @include('templates.control-buttons')
 @endsection
 
 

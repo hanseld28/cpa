@@ -12,7 +12,7 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="dashboard">
                 <i class="fa fa-list-alt" aria-hidden="true">
                     <h3>Formulários</h3>
                 </i>

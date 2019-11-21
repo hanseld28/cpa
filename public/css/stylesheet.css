@@ -10,7 +10,6 @@
            -box-sizing: border-box;
 
 }   
-
 /**
  * ===============================================================
  * stylesheet to user login
@@ -87,7 +86,7 @@ section#conteudo-view form input[type="submit"]{
  #user-perfil{
     position: fixed;
     float: top;
-    margin-top: 4%;
+    margin-top: 6%;
     margin-left: 0.5%;
 
     width: 240px;
@@ -119,7 +118,7 @@ section#conteudo-view form input[type="submit"]{
 #lateral-menu{
     position: fixed;
     float: left;
-    margin-top: 11.5%;
+    margin-top: 13.5%;
     margin-left: 0.5%;
 
     width: 240px;
@@ -200,7 +199,7 @@ section#conteudo-view form input[type="submit"]{
 
  #sub-header{
     position: absolute;
-    margin-top: 4%;
+    margin-top: 6%;
     margin-left: 260px;
     width: 80%;
     height: 15%;
@@ -232,16 +231,16 @@ section#conteudo-view form input[type="submit"]{
     margin-left: 20px;
 }
 
- #container{
-    position: absolute;
-    margin-top: 11.5%;
+#container{
+    position: fixed;
+    margin-top: 13.5%;
     margin-left: 260px;
     
     width: 80%;
     height: 70%;
     background: white;
     border-radius: 5px;
-
+    overflow-y: auto;
     box-shadow:1px 1px 2px 2px #dcdde1;
  }
 
@@ -253,6 +252,127 @@ section#conteudo-view form input[type="submit"]{
 }
  #new-form{ 
     margin-left: 72%;
+}
+
+
+/**
+ * ======================================================== *
+ * stylesheet to default form
+ * ======================================================== *
+ */
+ #form-control{
+    position: absolute;
+    width: 99%;
+    height: auto;
+    margin: 0.5%;
+    padding: 20px 20px 20px 20px;
+    /*overflow-y: auto;*/
+ }
+form.default-form{
+	float: left;
+    width: 100%;
+    height: inherit;
+}
+form.default-form label{
+	float: left;
+	width: 49%;
+	height: 60px;
+	padding: 7px 15px;
+	border: 1px solid #e9e9e9;
+	background: #fff;
+	border-radius: 5px;
+    margin-bottom: 20px;
+}
+form.default-form label:nth-last-of-type(odd){
+    margin-left: 2%;
+}
+form.default-form label span{
+	float: left;
+	width: 100%;
+	font: 400 .75em 'Maven Pro', sans-serif;
+	color: #c7c7c7;
+	padding-bottom: 5px;
+}
+form.default-form label input{
+	float: left;
+	width: 100%;
+	color: #5c5c5c;
+	font: 400 1.25em 'Maven Pro', sans-serif;
+	background: transparent;
+}	
+form.default-form label.submit{
+	background: #0ad181;
+    border-color: #0aaa67;
+    width: 20%;
+    margin-left: 80%;
+    margin-top: -61%;
+}
+
+form.default-form label.submit input{
+	font-weight: 800;
+    text-transform: uppercase;
+	line-height: 50px;
+    color: #f9f9f9;
+}
+
+form.default-form textarea{
+    resize: none;
+    overflow: auto;
+    width: 95%;
+    height: 150px;
+}
+form.default-form label.form-control{
+	float: left;
+	width: 49%;
+	height: 200px;
+	padding: 7px 15px;
+	border: 1px solid #e9e9e9;
+	background: #fff;
+	border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#line-section-questions{
+    margin-top: 55%;
+}
+
+#title-section-questions{
+    color: #5c5c5c;
+    font: 400 1.25em 'Maven Pro', sans-serif;
+}
+h4{
+    color: #5c5c5c;
+    font: 400 1.5em 'Maven Pro', sans-serif;
+}
+#add_field_button{
+    margin-bottom: 20px;
+}
+
+#content-questions{
+    position: absolute;
+    width: 95%;
+    height: auto;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+#group-questions{   
+    width: 95%;
+    height: 95%;
+}
+
+.trash-question{
+    margin-top: -41%;
+    margin-left: 100%;   
+}
+.trash-question a{
+    color: black;   
+}
+.trash-question a i{
+    color: inherit;   
+}
+.trash-question a:hover{
+    color: red;   
 }
 
 
