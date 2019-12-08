@@ -80,6 +80,32 @@ section#conteudo-view form input[type="submit"]{
 
 /**
  * ===============================================================
+ * stylesheet to top header
+ * ===============================================================
+ */
+ #header-default{
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    float: top;
+    background-color: #c0392b;
+    text-align: center;
+    border-bottom: 3px solid black;
+}
+#header-default h1{
+    font: 3em 'Maven Pro', sans-serif;
+    color: #fff;
+}
+#header-default h4{
+    font: 1em 'Maven Pro', sans-serif;
+    margin-top: -35px;
+    margin-left: 160px;
+    color: #fff;
+}
+
+
+/**
+ * ===============================================================
  * stylesheet to lateral menu to user perfil
  * ===============================================================
  */
@@ -101,13 +127,13 @@ section#conteudo-view form input[type="submit"]{
     text-align: center;
 }
 #user-perfil img{
-
+    margin-top: 15px;
 }
 #user-perfil label{
     position: initial;
     font: 1em 'Maven Pro', sans-serif;
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 /**
@@ -167,29 +193,6 @@ section#conteudo-view form input[type="submit"]{
 #lateral-menu ul li a:hover{
     color: #c23616; 
 }
-
-/**
- * ===============================================================
- * stylesheet to top header
- * ===============================================================
- */
-#header-default{
-    width: 100%;
-    height: 10%;
-    position: fixed;
-    float: top;
-    text-align: center;
-    border-bottom: 3px solid black;
-}
-#header-default h1{
-    font: 3em 'Maven Pro', sans-serif;
-}
-#header-default h4{
-    font: 1em 'Maven Pro', sans-serif;
-    margin-top: -35px;
-    margin-left: 160px;
-}
-
 
 /**
  * ===============================================================
@@ -376,3 +379,16 @@ h4{
 }
 
 
+
+/**
+ * ======================================================== *
+ * stylesheet to default table
+ * ======================================================== *
+ */
+
+#table-forms{
+    margin-top: 2.5%;
+}
+#alert-success{
+    margin-top: 10px;
+}

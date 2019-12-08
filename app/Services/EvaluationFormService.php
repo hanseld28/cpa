@@ -28,13 +28,13 @@ class EvaluationFormService
 			$evaluationForm = $this->repository->create($data);
 			return [
 				'success' 	=> true,
-				'messages' 	=> "Formulário criado",
+				'messages' 	=> "Formulário criado com sucesso!",
 				'data' 	  	=> $evaluationForm,
 			];
 		}
-		catch(Exception $exception)
+		catch(Exception $e)
 		{
-			switch(get_class($exception))
+			switch(get_class($e))
 			{
 				case QueryException::class 		:  return ['success' => false, 'messages' => $e->getMessage()];
 				case ValidatorException::class 	:  return ['success' => false, 'messages' => $e->getMessageBag()];

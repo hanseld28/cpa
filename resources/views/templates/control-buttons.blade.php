@@ -7,7 +7,7 @@
             Em andamento
         </button>
     </div>
-    <a href="form">
+    <a href="{{route('form.index')}}">
         <button type="button" id="new-form" class="btn btn-success">
             Novo
         </button>

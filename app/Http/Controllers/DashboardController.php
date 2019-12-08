@@ -4,25 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
+use App\Repositories\EvaluationFormRepository;
 use App\Validators\UserValidator;
 use Exception;
 use Auth;
+
 
 class DashboardController extends Controller
 {
     private $repository;
     private $validator;
+    private $evaluationFormRepository;
 
-
-    public function __construct(UserRepository $repository, UserValidator $validator)
+    public function __construct(UserRepository $repository, UserValidator $validator, EvaluationFormRepository $evaluationFormRepository)
     {
         $this->repository = $repository;
         $this->validator  = $validator;
+        $this->evaluationFormRepository = $evaluationFormRepository;
     }
 
     public function index()
     {
-        return view('user.commission-dashboard');
+        $evaluationForms = $this->evaluationFormRepository->all();
+
+        return view('user.commission-dashboard', [
+            'evaluationForms' => $evaluationForms
+        ]);
     }
 
     public function auth(Request $request)

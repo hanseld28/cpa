@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
-
 /**
  * Class Person.
  *
  * @package namespace App\Entities;
  */
-class Person extends Model implements Transformable
+class Person extends User implements Transformable
 {
     use TransformableTrait;
     use Notifiable;

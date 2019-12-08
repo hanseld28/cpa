@@ -24,6 +24,8 @@ class CreateEvaluationFormsTable extends Migration
 			$table->date('begin_date');
 			$table->date('end_date');
 
+			$table->integer('user_type_id')->unsined();
+
             $table->rememberToken();
 			$table->timestamps();
 			$table->softDeletes();
@@ -40,6 +42,10 @@ class CreateEvaluationFormsTable extends Migration
 	 */
 	public function down()
 	{
+		Schema::table('evaluation_forms', function(Blueprint $table) {
+			$table->dropForeign('evaluation_forms_users_types_id_foreign');
+		});
+
 		Schema::drop('evaluation_forms');
 	}
 }

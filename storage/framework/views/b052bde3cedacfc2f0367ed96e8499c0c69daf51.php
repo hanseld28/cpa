@@ -1,5 +1,5 @@
 <div id="user-perfil">
-    <img>
+    <img src="http://cemri.uab.pt/wp-content/uploads/sites/2/2018/05/default-user.png" width="70" height="70">
     <label for="username">Nome do Usuário</label>
 </div>
 <nav id='lateral-menu'>
@@ -12,7 +12,7 @@
             </a>
         </li>
         <li>
-            <a href="dashboard">
+            <a href="<?php echo e(route('user.dashboard')); ?>">
                 <i class="fa fa-list-alt" aria-hidden="true">
                     <h3>Formulários</h3>
                 </i>

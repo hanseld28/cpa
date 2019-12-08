@@ -12,20 +12,20 @@
 @section('view-content')
 
     <div id="form-control">
-    {!! Form::open(['method' => 'post', 'class' => 'default-form']) !!}
+    {!! Form::open(['route' => 'form.store', 'method' => 'post', 'class' => 'default-form']) !!}
         
         <div><h4>Informações básicas</h4></div>  
 
         @include('templates.form.input', ['input' => 'Título', 'attributes' => ['id' => 'title', 'name' => 'title', 'placeholder' => 'Título']])
         @include('templates.form.textarea', ['label' => 'Descrição (opcional)', 'class' => 'form-control', 'textarea' => 'description', 'attributes' => ['id' => 'description', 'name' => 'description', 'rows' => 32, 'cols' => 54, 'placeholder' => 'Digite aqui a descrição do formulário...']])  
         
-        @include('templates.form.select', ['label' => "Quem irá avaliar?", 'select' => 'user_type_id', 'data' => $appraisers_id_list ?? [0 => 'Aluno', 1 => 'Professor', 2 => 'Coordenador', 3 => 'Membro da administração'], 'attributes' => ['id' => 'user_types', 'name' => 'user_types', 'placeholder' => "Avaliador"]])
-        @include('templates.form.select', ['label' => "Quem será avaliado?", 'select' => 'evaluated_id', 'data' => $evalueted_id_list ?? [0 => 'Aluno', 1 => 'Professor', 2 => 'Coordenador', 3 => 'Membro da administração'], 'attributes' => ['id' => 'evaluated', 'name' => 'evaluated', 'placeholder' => "Avaliados"]])
+        @include('templates.form.select', ['label' => "Quem irá avaliar?", 'select' => 'user_type_id', 'data' => $appraisers_id_list ?? [1 => 'Aluno', 2 => 'Professor', 3 => 'Coordenador', 4 => 'Membro da administração'], 'attributes' => ['id' => 'user_type_id', 'name' => 'user_type_id', 'placeholder' => "Avaliador"]])
+        @include('templates.form.select', ['label' => "Quem será avaliado?", 'select' => 'evaluated_id', 'data' => $evalueted_id_list ?? [1 => 'Aluno', 2 => 'Professor', 3 => 'Coordenador', 4 => 'Membro da administração'], 'attributes' => ['id' => 'evaluated_id', 'name' => 'evaluated_id', 'placeholder' => "Avaliados"]])
     
-        @include('templates.form.select', ['label' => "Categoria", 'select' => 'category_id', 'data' => $categories_list ?? [0 => 'Alunos para Professores', 1 => 'Alunos para Disciplinas', 2 => 'Professores para Coordenadores', 3 => 'Coordenadores para Administração'], 'attributes' => ['id' => 'categories', 'name' => 'categories', 'placeholder' => "Categoria"]])
-        @include('templates.form.select', ['label' => "Curso", 'select' => 'course_id', 'data' => $courses_list ?? [0 => 'ADS', 1 => 'AGRO', 2 => 'GEAD', 3 => 'LOG', 4 => 'RH'], 'attributes' => ['placeholder' => "Curso"]])
-        @include('templates.form.date', ['input' => "Início"])
-        @include('templates.form.date', ['input' => "Fim"])
+        @include('templates.form.select', ['label' => "Categoria", 'select' => 'category_id', 'data' => $categories_list ?? [0 => 'Alunos para Professores', 1 => 'Alunos para Disciplinas', 2 => 'Professores para Coordenadores', 3 => 'Coordenadores para Administração'], 'attributes' => ['id' => 'category_id', 'name' => 'category_id', 'placeholder' => "Categoria"]])
+        @include('templates.form.select', ['label' => "Curso", 'select' => 'course_id', 'data' => $courses_list ?? [0 => 'ADS', 1 => 'AGRO', 2 => 'GEAD', 3 => 'LOG', 4 => 'RH'], 'attributes' => ['id' => 'course_id', 'name' => 'course_id', 'placeholder' => "Curso"]])
+        @include('templates.form.date', ['input' => "Início", 'attributes' => ['id' => 'begin_date', 'name' => 'begin_date']])
+        @include('templates.form.date', ['input' => "Fim", 'attributes' => ['id' => 'end_date', 'name' => 'end_date']])
 
         <hr id="line-section-questions">
         <div id="content-questions">

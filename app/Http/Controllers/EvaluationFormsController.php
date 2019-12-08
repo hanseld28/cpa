@@ -12,6 +12,12 @@ use App\Repositories\EvaluationFormRepository;
 use App\Validators\EvaluationFormValidator;
 use App\Services\EvaluationFormService;
 
+use App\Http\Controllers\QuestionsController;
+use App\Http\Requests\QuestionCreateRequest;
+use App\Services\QuestionService;
+use App\Repositories\QuestionRepository;
+
+
 /**
  * Class EvaluationFormsController.
  *
@@ -21,11 +27,14 @@ class EvaluationFormsController extends Controller
 {
     protected $repository;
     protected $service;
+    protected $questionsController;    
 
-    public function __construct(EvaluationFormRepository $repository, EvaluationFormService $service)
+
+    public function __construct(EvaluationFormRepository $repository, EvaluationFormService $service, QuestionsController $questionsController)
     {
-        $this->repository   = $repository;
-        $this->service      = $service;
+        $this->repository           = $repository;
+        $this->service              = $service;
+        $this->questionsController  = $questionsController;
     }
 
     /**
@@ -41,37 +50,43 @@ class EvaluationFormsController extends Controller
    
     public function store(EvaluationFormCreateRequest $request)
     {
+
+        $questions = $request->all()['questions'];
+        
         $request = $this->service->store($request->all());
+        $evaluationForm = $request['success'] ? $request['data'] : null;
+        
+        $questionsRequest = [
+            'evaluation_form_id' => $evaluationForm->only('id')['id'],
+            'questions' => $questions,
+        ];
 
-        if($request['success'])
-            $evaluationForm = $request['data'];
-        else
-            $evaluationForm = null;
+        $this->questionsController->store($questionsRequest);
+        
+        
+        session()->flash('success', [
+            'success'  => $request['success'],
+            'messages' => $request['messages'],
+        ]);   
 
+        return redirect()->route('user.dashboard');
+        /*
         return view('evaluationForm.index', [
             'evaluationForm' => $evaluationForm,
         ]);
+        */
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+
     public function show($id)
     {
         $evaluationForm = $this->repository->find($id);
+        //where('coluna', $valor)->first();
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $evaluationForm,
-            ]);
-        }
-
-        return view('evaluationForms.show', compact('evaluationForm'));
+        return view('evaluationForm.show', [
+            'evaluationForm' => $evaluationForm
+        ]);
     }
 
     /**
